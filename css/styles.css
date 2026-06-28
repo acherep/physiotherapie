@@ -1,31 +1,57 @@
-body {
-	background-image: url(/images/bg.gif); /** Link to the image you created **/
-	background-repeat: repeat-y; /** Repeats the image vertically **/
-	background-position: center; /** Centers the Background image **/
-	background-color: #eaeaea; /** Website BG colour (matches canvas colour in Step 1) **/
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+    margin:0;
+    background:#eaeaea;
+    color:#666;
+    font:14px/1.5 Arial,Helvetica,sans-serif;
 }
-
-#header {
-	width: 590px;
-	height: 149px;
-	background-image: url(/images/header.jpg);
-	margin: 0 auto;
-	margin-top: 5px;
-	text-align: center;
-} 
-
-#container {
-	width: 606px;
-	margin: 0 auto;
-	padding-left: 20px;	
-	
-	text-align: left;
-	color:#666;
-	font-family:Arial, Helvetica, sans-serif;
-	font-size:14px;
-	line-height:20px;
+.page{
+    max-width:630px;
+    margin:0 auto;
+    background:#fff;
 }
-
-.cryptedmail:after {
-  content: attr(data-name) "@" attr(data-domain) "." attr(data-tld); 
+header{
+    margin:0 auto;
+    text-align:center;
+    padding-top:5px;
+}
+header img{
+    display:block;
+    width:100%;
+    height:auto;
+    max-width:590px;
+    margin:0 auto;
+}
+main{
+    max-width:630px;
+    margin:0 auto;
+    padding:0 16px 24px;
+}
+.contact{
+    text-align:center;
+}
+p{margin:1em 0}
+ul{padding-left:1.25em}
+li{margin-bottom:.25em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.map{
+    position:relative;
+    width:100%;
+    aspect-ratio:585/450;
+    margin:1em 0;
+}
+.map iframe{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    border:0;
+}
+@supports not (aspect-ratio:1){
+    .map{height:0;padding-bottom:76.92%}
+}
+.cryptedmail::after{
+    content:attr(data-name) "@" attr(data-domain) "." attr(data-tld);
 }
